@@ -76,7 +76,7 @@ public class BookManagement {
         boolean found = false;
         for (Book book : bookList
         ) {
-            if (book.getBookName().contains(searchName)) {
+            if (book.getBookName().toLowerCase().trim().contains(searchName.trim().toLowerCase())) {
                 book.displayData();
                 found = true;
             }
