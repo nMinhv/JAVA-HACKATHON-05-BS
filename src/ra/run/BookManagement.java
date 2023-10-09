@@ -67,16 +67,22 @@ public class BookManagement {
 
     public static void sortBookByInterest() {
         bookList.sort(Book::compareTo);
+        displayBooks();
     }
 
     public static void findBookByName() {
         System.out.println("Nhập tên sách muốn tìm:");
         String searchName = scanner.nextLine();
+        boolean found = false;
         for (Book book : bookList
         ) {
             if (book.getBookName().contains(searchName)) {
                 book.displayData();
+                found = true;
             }
+        }
+        if (!found) {
+            System.out.println("Không có sách nào chứa tên " + searchName);
         }
     }
 
