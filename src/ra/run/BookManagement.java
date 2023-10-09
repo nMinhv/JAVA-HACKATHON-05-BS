@@ -33,7 +33,7 @@ public class BookManagement {
                     sortBookByInterest();
                     break;
                 case 4:
-                    deledeBookById();
+                    deleteBookById();
                     break;
                 case 5:
                     findBookByName();
@@ -100,7 +100,7 @@ public class BookManagement {
         }
     }
 
-    public static void deledeBookById() {
+    public static void deleteBookById() {
         System.out.println("Nhập id sách muốn xóa:");
         int bookId = Integer.parseInt(scanner.nextLine());
         int bookIndex = bookIndex(bookId);
