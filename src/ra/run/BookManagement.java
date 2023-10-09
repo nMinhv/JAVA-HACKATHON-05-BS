@@ -92,9 +92,9 @@ public class BookManagement {
         int bookIndex = bookIndex(bookId);
         if (bookIndex >= 0) {
             System.out.println("Nhập trạng thái sách(true - false):");
-            boolean changeStatus = Boolean.parseBoolean(scanner.nextLine());
-            bookList.get(bookIndex).setBookStatus(changeStatus);
+            bookList.get(bookIndex).setBookStatus(!bookList.get(bookIndex).isBookStatus());
             bookList.set(bookIndex, bookList.get(bookIndex));
+            System.out.println("Đã thay đổi trạng thái " + bookList.get(bookIndex).getBookName());
         } else {
             System.out.println("Không tìm thấy sách có id " + bookId);
         }
@@ -106,6 +106,7 @@ public class BookManagement {
         int bookIndex = bookIndex(bookId);
         if (bookIndex >= 0) {
             bookList.remove(bookIndex);
+            System.out.println("đã xóa");
         } else {
             System.out.println("Không tìm thấy sách có id " + bookId);
         }
